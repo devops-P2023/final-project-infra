@@ -1,0 +1,42 @@
+# Initialize Terraform
+terraform init
+
+# Terraform Validate
+terraform validate
+
+# Terraform Plan to Verify what it is going to create / update / destroy
+terraform plan
+
+# Terraform Apply to Create EC2 Instance
+terraform apply 
+
+
+
+# Destroy EC2 Instance
+terraform destroy
+
+# Delete Terraform files 
+rm -rf .terraform*
+rm -rf terraform.tfstate*
+
+
+
+# Backup
+cp .terraform.lock.hcl .terraform.lock.hcl-FIRST-INIT
+
+
+# Upgrade Provider Version
+terraform init -upgrade
+
+
+
+
+
+
+
+
+## Referencias
+- [Random Pet Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet)
+- [Dependency Lock File](https://www.terraform.io/docs/configuration/dependency-lock.html)
+- [Terraform New Features in v0.14](https://learn.hashicorp.com/tutorials/terraform/provider-versioning?in=terraform/0-14)
+- [AWS S3 Bucket Region - Read Only in AWS Provider V3.x](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/guides/version-3-upgrade#region-attribute-is-now-read-only)

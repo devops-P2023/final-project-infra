@@ -1,0 +1,29 @@
+
+Despues de creada la estructura del directorio "base", parados dentro de la carpeta us-east-1 
+creamos los link simbolicos dentro de la misma haciendo ref a los archivos dentro de base
+ejecutando los siguientes comandos: 
+
+/TerrafomUtils/InfraProyecto23/infrastructure/aws/us-east-1
+
+❯ ln -s ../../base/_providers.tf
+❯ ln -s ../../base/_variables.tf
+❯ ln -s ../../base/_versions.tf
+❯ ln -s ../../base/main.tf
+
+/TerrafomUtils/InfraProyecto23/infrastructure/aws/us-east-1
+
+Creamos estos archivos propios del ambiente 
+❯ touch backend.tf
+❯ touch _terraform.tfvars
+
+
+
+Dentro de _provider.tf en la carpeta BASE, El provider de AWS es el primero que debemos configurar ya que es
+ el que establece/levanta las credenciales, por defecto estan asociadas al perfil default. 
+
+ Si hacemos un [cat $HOME/.aws/credentials] podemos verificar el perfil y sus credentials
+ dentro de nuestro ambiente
+
+
+
+
