@@ -1,4 +1,5 @@
-# Resource Block: Create Random Pet Name 
+#Works
+/* # Resource Block: Create Random Pet Name 
 resource "random_pet" "petname" {
   length    = 5
   separator = "-"
@@ -10,8 +11,8 @@ resource "aws_s3_bucket" "frontend" {
   #acl    = "public-read"
   #region = "us-east-1"  # Comment this if we are going to use AWS Provider v3.x version
 }
-
-
+ */
+#=========
 
 
 #acl    = "public-read"

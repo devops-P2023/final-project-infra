@@ -23,3 +23,9 @@ variable "role_arn" {
   type        = string
   default     = "arn:aws:iam::806379772007:role/LabRole"
 } */
+
+variable "role_arn" {
+  description = "Role ARN"
+  type        = string
+  default     = "arn:aws:iam::613707607690:role/LabRole"
+}
