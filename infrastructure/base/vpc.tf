@@ -8,8 +8,7 @@ resource "aws_vpc" "vpc-eks" {
   }
 }
 
-
-# Resource-2: Create Subnet 1
+# Resource: Create Subnet 1
 resource "aws_subnet" "vpc-eks-private-subnet-1" {
   vpc_id                  = aws_vpc.vpc-eks.id
   cidr_block              = "10.0.1.0/24"
@@ -21,7 +20,7 @@ resource "aws_subnet" "vpc-eks-private-subnet-1" {
   }
 }
 
-# Resource-3: Create Subnet 2
+# Resource: Create Subnet 2
 resource "aws_subnet" "vpc-eks-private-subnet-2" {
   vpc_id                  = aws_vpc.vpc-eks.id
   cidr_block              = "10.0.2.0/24"
@@ -33,7 +32,6 @@ resource "aws_subnet" "vpc-eks-private-subnet-2" {
   }
 }
 
-
 # Resource: Internet Gateway
 resource "aws_internet_gateway" "vpc-eks-igw" {
   vpc_id = aws_vpc.vpc-eks.id
@@ -43,7 +41,7 @@ resource "aws_internet_gateway" "vpc-eks-igw" {
   }
 }
 
-# Route table :
+#  Resource: Route table:
  resource "aws_default_route_table" "vpc-eks-rt" {
   default_route_table_id = aws_vpc.vpc-eks.default_route_table_id
   route {
