@@ -4,7 +4,7 @@ resource "aws_vpc" "vpc-eks" {
   cidr_block = "10.0.0.0/16"
 
   tags = {
-    Name = "vpc-eks"
+    Name = "vpc-eks-${terraform.workspace}"
   }
 }
 
@@ -16,7 +16,7 @@ resource "aws_subnet" "vpc-eks-private-subnet-1" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "vpc-eks-private-subnet-1"
+    Name = "vpc-eks-private-subnet-1-${terraform.workspace}"
   }
 }
 
@@ -28,7 +28,7 @@ resource "aws_subnet" "vpc-eks-private-subnet-2" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "vpc-eks-private-subnet-2"
+    Name = "vpc-eks-private-subnet-2-${terraform.workspace}"
   }
 }
 
@@ -37,7 +37,7 @@ resource "aws_internet_gateway" "vpc-eks-igw" {
   vpc_id = aws_vpc.vpc-eks.id
 
   tags = {
-    Name = "vpc-eks-igw"
+    Name = "vpc-eks-igw-${terraform.workspace}"
   }
 }
 
@@ -50,7 +50,7 @@ resource "aws_internet_gateway" "vpc-eks-igw" {
   }
 
   tags = {
-    Name = "vpc-eks-rt"
+    Name = "vpc-eks-rt-${terraform.workspace}"
   }
 } 
  

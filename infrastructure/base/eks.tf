@@ -1,6 +1,6 @@
 
 resource "aws_eks_cluster" "eks_cluster" {
-  name     = "eks_cluster"
+  name     = "eks_cluster-${terraform.workspace}"
   role_arn = var.role_arn
   version = "1.22"
 
@@ -11,7 +11,7 @@ resource "aws_eks_cluster" "eks_cluster" {
 
 resource "aws_eks_node_group" "node_group_eks_cluster" {
   cluster_name    = aws_eks_cluster.eks_cluster.name
-  node_group_name = "node_group_eks_cluster"
+  node_group_name = "node_group_eks_cluster-${terraform.workspace}"
   node_role_arn   = var.role_arn
   subnet_ids      = [aws_subnet.vpc-eks-private-subnet-1.id, aws_subnet.vpc-eks-private-subnet-2.id]
 
