@@ -20,6 +20,7 @@ resource "aws_eks_node_group" "node_group_eks_cluster" {
     max_size     = 5
     min_size     = 1
   }
+  # Nota 1
 
   ami_type       = "AL2_x86_64"
   instance_types = ["t3.small"]
@@ -27,3 +28,16 @@ resource "aws_eks_node_group" "node_group_eks_cluster" {
   disk_size      = 20
 
 }
+
+
+# Nota 1: 
+#En un caso practico real podriamos referenciar el workspace 
+#para obtener ciertos comportamientos dependiendo el ambiente
+#Ej: -> 
+/*
+scaling_config {
+    desired_size = terraform.workspace == "prod" ? 4 : 2  
+    max_size     = terraform.workspace == "prod" ? 5 : 3  
+    min_size     = 1
+  }
+  */
