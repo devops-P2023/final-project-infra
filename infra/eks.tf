@@ -29,7 +29,7 @@ resource "aws_eks_node_group" "node_group_eks_cluster" {
 
 }
 
-
+ 
 # Nota 1: 
 #En un caso practico real podriamos referenciar el workspace 
 #para obtener ciertos comportamientos dependiendo el ambiente

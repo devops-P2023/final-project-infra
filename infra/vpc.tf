@@ -1,3 +1,5 @@
+
+
 # Resources Block
 # Resource-1: Create VPC
 resource "aws_vpc" "vpc-eks" {
