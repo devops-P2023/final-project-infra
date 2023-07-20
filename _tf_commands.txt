@@ -40,3 +40,18 @@ terraform init -upgrade
 - [Dependency Lock File](https://www.terraform.io/docs/configuration/dependency-lock.html)
 - [Terraform New Features in v0.14](https://learn.hashicorp.com/tutorials/terraform/provider-versioning?in=terraform/0-14)
 - [AWS S3 Bucket Region - Read Only in AWS Provider V3.x](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/guides/version-3-upgrade#region-attribute-is-now-read-only)
+
+
+
+
+
+##Kubernetes
+
+Luego podemos loguearnos en el cluster usando la consola de AWS y el comando: aws eks --region us-east-1 update-kubeconfig --name eks-cluster
+
+Si hacemos un kubectl get nodes deberíamos de ver los nodos desplegados.
+
+$ kubectl get nodes
+NAME                            STATUS   ROLES    AGE     VERSION
+ip-172-31-38-51.ec2.internal    Ready    <none>   3m42s   v1.21.12-eks-5308cf7
+ip-172-31-78-220.ec2.internal   Ready    <none>   3m22s   v1.21.12-eks-5308cf7
